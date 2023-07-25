@@ -28,6 +28,28 @@
 // we can also change the data inside the box.
 // we can also give the box a name so that we can refer to it later.
 
+
+// rules for naming variables:
+// - variable names can contain letters, digits, underscores and dollar signs but no spaces or hyphens or other special characters
+// - variable names cannot start with a digit
+// - variable names are case sensitive
+// - variable names cannot be reserved keywords
+
+// examples of valid variable names:
+var name;
+var age;
+var _name;
+var $name;
+var name1;
+
+// examples of invalid variable names:
+var 1name;
+var first name;
+var first-name;
+var first@name;
+
+
+
 // how to declare a variable in Javascript?
 // we can declare a variable using the keyword var, let or const
 // example:
