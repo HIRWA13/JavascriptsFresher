@@ -4,7 +4,7 @@
 // with the splice method, we can remove elements from the array without leaving holes in the array.
 
 // syntax:
-// array.splice(start[, deleteCount[, item1[, item2[, ...]]]])
+// array.splice(index, howmany, item1, ....., itemX)
 
 // example:
 // 1. remove 0 (zero) elements from index 2, and insert "drum":
