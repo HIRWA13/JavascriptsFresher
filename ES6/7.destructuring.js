@@ -125,3 +125,21 @@ console.log(rest);
 const [c, d,,,...rest2] = numbers;
 console.log(c);
 console.log(d);
+
+// quiz:
+/*
+// create a function buildHouse with an object as a default parameter
+// the object should also set the following properties the these defaults:
+// - floors = 1,
+// - color: 'red',
+// - walls: 'brick'
+
+// the function should return:
+// -> 'Your house has 1 floor(s) with red brick walls'
+*/
+
+const buildHouse = ( { floors = 1, color = 'red', walls = 'brick' } = {} ) => {
+    return `Your house has ${floors} floor(s) with ${color} ${walls} Walls`
+}
+console.log(buildHouse({}))
+console.log(buildHouse({ floors: 2 , color: 'blue', walls: 'woody'}))
