@@ -1,6 +1,8 @@
 // Javascript ES6 Template Literals
 
-// Template literals are string literals allowing embedded expressions. You can use multi-line strings and string interpolation features with them. They were called "template strings" in prior editions of the ES2015 specification.
+// Template literals are string literals allowing embedded expressions. You can use multi-line strings and string interpolation features with them.
+
+// in few words: template literals are string literals that can span multiple lines and can hold some other expressions inside them. 
 
 // Basic literal string creation
 // In ES6, you can create strings using template literals:

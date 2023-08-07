@@ -57,3 +57,12 @@ myFunction(1, 2, 3, 4, 5);
 // the spread operator expands an object into its properties.
 // also we can use the spread operator to concatenate arrays.
 // the spread operator is is used also to pass arguments to functions as an array but when used in this way, it is called the rest parameter.
+
+
+// difeerence between spread operator and rest parameter:
+
+// the spread operator is used to expand an array into its elements.
+// while the rest parameter is used to pass arguments to functions as an array.
+
+// the rest parameter is used to bundle elements back into an array
+// with the rest parameter, we are representing many items.

@@ -46,3 +46,40 @@ console.log(myArrowFunctionWithReturnStatement());
 // arrow functions are always anonymous
 // arrow functions are always function expressions because they are always assigned to a variable
 // arrow functions do not have their own "this" keyword
+
+
+// arrow functions and "this" keyword:
+// with regular functions, this is defined depending on how the function is called.
+// but when it comes to arrow functins, this is defined depending on where the function is defined.(where that function is located)
+
+// // example:
+// 1. regular function:
+const muRegularFunction = function() {
+    console.log(this);
+}
+// muRegularFunction();
+
+// 2. arrow function:
+const myArrowFunctionThis = () => {
+    console.log(this);
+}
+myArrowFunctionThis();
+
+// so, the arrow function is defined in the global scope and "this" refers to the global object which is the window object.
+// but if define an arrow function inside an object, "this will refer to that object."
+
+// // example:
+const myObject = {
+    name: "John",
+    age: 30,
+    myMethod: function() {
+        const myArrowFunction = () => {
+            console.log(this);
+        }
+    }
+}
+
+myObject.myMethod(); // output: {}
+myObject.myMethod.myArrowFunction(); // output: {}
+
+// so, the arrow function is defined inside the myObject object and "this" refers to the global object which is the window object.

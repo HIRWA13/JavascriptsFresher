@@ -17,18 +17,5 @@ const newArray1 = array1.slice();
 console.log(newArray1); // [ 1, 2, 3, 4, 5 ]
 
 
-
-
-const duplicates = (str) => {
-    let arr = str.split('');
-    let newArr = [];
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] === arr[i + 2]) {
-            newArr.push(arr[i + 2]);
-        }
-    }
-    return newArr.join('');
-}
-
-// test
-console.log(duplicates('abccdeee')); // cceee
+const { toLowerCase } = require("lodash");
+console.log(toLowerCase('HELLO');
