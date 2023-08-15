@@ -1,9 +1,9 @@
 const addLastName = (...names) =>{
-    const lastname = names[2];
+    const lastname = names.splice(3,1);
     if(names.length < 4) {
        return`not enough names`;
     } else {
-        return names.map((item) => `${item} ${lastname}`)
+        return names.map((item) => `${item} ${lastname}`).splice(2, 1)
     }
    
 }

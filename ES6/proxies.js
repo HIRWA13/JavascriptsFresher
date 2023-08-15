@@ -67,18 +67,39 @@ agent3.pay = 1000; // we set the payRate to 1000
 // game object
 
 
-const gameSettings = {date: '2023-4-08'};
+const gameSettings = { date: '2023-4-08', difficulty: 'medium' };
+
 const gameSettingsProxy = new Proxy(gameSettings, {
-    get: (obj, property)=>{
-        return property in obj ? obj[property] : 'no property';
-    },
-    set: (obj, property, value)=>{
-        if(property === 'difficulty' && !['easy', 'medium', 'hard'].includes(value.toLowerCase())){
-            throw new Error('DIFFICULTY NOT FOUND');
-        }
-        obj[property] = value;
+  get: (obj, property) => {
+    return property in obj ? obj[property] : 'no property';
+  },
+  set: (obj, property, value) => {
+    if (property === 'difficulty' && !['easy', 'medium', 'hard'].includes(value.toLowerCase())) {
+      throw new Error('DIFFICULTY NOT FOUND');
     }
+    obj[property] = value;
+  },
 });
+
+const allGames = [
+  { name: 'Game1', date: '2023-4-08' },
+  { name: 'Game2', date: '2023-4-09' },
+  // ... more game objects
+];
+
+function generateAllGamesDate(date) {
+  if (typeof date !== 'string') {
+    return null;
+  }
+
+  const dateFilter = game => game.date === date;
+  return Array.from(allGames).filter(dateFilter).map(game => game.name);
+}
+
+const gamesOnDate = generateAllGamesDate(gameSettingsProxy.date);
+console.log(gamesOnDate); // Output: ['Game1']
+
+
 
 gameSettingsProxy.difficulty = 'easy';
 gameSettingsProxy.score = 0;
